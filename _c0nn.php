@@ -1,5 +1,5 @@
 <?php
-
+echo 'testing';
 $u='userNX3';
 $p='iEOXLimq7i5axDUu';
 $db='snapglasses';
