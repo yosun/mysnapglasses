@@ -17,8 +17,8 @@ if(isset($submit) && $submit == 1){
         UploadS3('giftgami',$filenamewithextension,$temppath);
 
         require_once('crop.img.php');
-        echo $temppath2;
-        makeThumb($temppath2);
+      //  echo $temppath2;
+        $$temppaththumb=makeThumb($temppath2);
 
         UploadS3('giftgami',$thumbname,$temppaththumb);
 

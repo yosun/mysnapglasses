@@ -1,10 +1,10 @@
 <?php
  function makeThumb( $filepath, $thumbSize=350 ){
-   echo 'mt'.$filepath;
+  // echo 'mt'.$filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
-  $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath).'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
-
+  $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath);//.'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
+$thumbFilePath = $thumbFile;
  /* Create the Source Image */
   $src = imagecreatefrompng( $srcFile );
  /* Determine the Image Dimensions */
@@ -22,4 +22,6 @@
     $src = imagepng( $new , $thumbFile );
   imagedestroy( $new );
   imagedestroy( $src );
+
+  return $thumbFilePath;
 }
