@@ -57,21 +57,22 @@ else{
     background-color:black;
     margin:-20px;
     margin-bottom:20px;
-    font-family: 'Just Another Hand', cursive;
   }
   .column {
-    width: 235px;
+    width: 260px;
     float: left;
-    padding-bottom: 240px;
+    padding-bottom: 250px;
   }
   .portlet {
     margin: 0 1em 1em 0;
     padding: 0.3em;
-    font-family: 'Just Another Hand', cursive;
   }
   .portlet-header {
-    padding: 0.2em 0.3em;
+    padding: 1em 0.3em;
     position: relative;
+    vertical-align: top;
+    text-align:center;
+     font-family: 'Just Another Hand', cursive;
   }
   .portlet-toggle {
     position: absolute;
@@ -80,7 +81,7 @@ else{
     margin-top: -8px;
   }
   .portlet-content {
-font-family: 'Just Another Hand', cursive;
+ font-family: 'Just Another Hand', cursive;
     padding: 0.2em;
     text-align: center;
   }
@@ -92,6 +93,12 @@ font-family: 'Just Another Hand', cursive;
   img{
     width: 200px;
     height: 200px;overflow:hidden;
+  }
+  .ui-icon{
+  background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_6495ED_256x240.png");
+  }
+  .ui-icon-red {
+  background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_ff0000_256x240.png") !important;
   }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -115,7 +122,7 @@ font-family: 'Just Another Hand', cursive;
 
       if(icon.find(".ui-icon-red")){
         $.post( "http://php-mysnapglasses.0ec9.hackathon.openshiftapps.com/vote.add.php?id="+icon.closest("div").prop("id"), function( data ) {
-          var id = icon.closest("div").prop("id");
+        var id = icon.closest("div").prop("id");
         var val = parseInt($("#votes"+id).text()) + 1;
          $("#votes"+id).text(val);
       });

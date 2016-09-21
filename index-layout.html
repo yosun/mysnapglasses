@@ -39,18 +39,20 @@
     margin-bottom:20px;
   }
   .column {
-    width: 240px;
+    width: 260px;
     float: left;
-    padding-bottom: 240px;
+    padding-bottom: 250px;
   }
   .portlet {
     margin: 0 1em 1em 0;
     padding: 0.3em;
   }
   .portlet-header {
-    padding: 0.2em 0.3em;
+    padding: 1em 0.3em;
     position: relative;
     vertical-align: top;
+    text-align:center;
+     font-family: 'Just Another Hand', cursive;
   }
   .portlet-toggle {
     position: absolute;
@@ -59,7 +61,7 @@
     margin-top: -8px;
   }
   .portlet-content {
-
+ font-family: 'Just Another Hand', cursive;
     padding: 0.2em;
     text-align: center;
   }
@@ -76,9 +78,8 @@
   background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_6495ED_256x240.png");
   }
   .ui-icon-red {
-  background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_ff0000_256x240.png");
+  background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_ff0000_256x240.png") !important;
   }
-  .ui-icon-heart { background-position: -208px -112px; }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -98,8 +99,8 @@
 
     $( ".heart-toggle" ).on( "click", function() {
       var icon = $( this );
-
-      if(icon.find(".ui-icon-red")){
+      var isHeartRed = icon.hasClass("ui-icon-red");
+      if(icon.find(".ui-icon-red")){//
         var id = icon.closest("div").prop("id");
       var val = parseInt($("#votes"+id).text()) + 1;
        $("#votes"+id).text(val);
