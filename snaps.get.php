@@ -122,7 +122,7 @@ font-family: 'Just Another Hand', cursive;
 </head>
 <body>
 
-<div class="bannertop">My SnapGlass.es SnapBox <?php echo count($json); ?></div>
+<div class="bannertop">My SnapGlass.es SnapBox x<?php echo count($json); ?></div>
 
 <?php
 for($i=0;$i<count($json);$i++){
@@ -131,7 +131,7 @@ for($i=0;$i<count($json);$i++){
 ?>
   <div class="portlet">
     <div class="portlet-header"><img src="<?php echo $json[$i]['thumb']; ?>" /></div>
-    <div class="portlet-content"><?php echo $json[$i]['caption']; ?></div>
+    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?></div>
   </div>
  <?php
   if($i%3==2 || $i==(count($json)-1))
