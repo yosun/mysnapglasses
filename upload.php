@@ -14,13 +14,13 @@ if(isset($submit) && $submit == 1){
     echo $fullurl;//. ' =fullurl | '. sys_get_temp_dir(). ' | temppath= '.$temppath;
         require_once('s3.upload.php');
 
-        UploadS3('giftgami',$filenamewithextension,$temppath);
+        UploadS3('snapglasses',$filenamewithextension,$temppath);
 
         require_once('crop.img.php');
       //  echo $temppath2;
-        $$temppaththumb=makeThumb($temppath2);
+        $temppaththumb=makeThumb($temppath2);
 
-        UploadS3('giftgami',$thumbname,$temppaththumb);
+        UploadS3('snapglasses',$thumbname,$temppaththumb);
 
         require_once('/opt/app-root/src/_c0nn.php');
         //mysql_select_db('snapglasses');
