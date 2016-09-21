@@ -58,6 +58,7 @@ else{
     background-color:black;
     margin:-20px;
     margin-bottom:20px;
+    font-family: 'Just Another Hand', cursive;
   }
   .column {
     width: 240px;
@@ -67,6 +68,7 @@ else{
   .portlet {
     margin: 0 1em 1em 0;
     padding: 0.3em;
+    font-family: 'Just Another Hand', cursive;
   }
   .portlet-header {
     padding: 0.2em 0.3em;
@@ -79,7 +81,7 @@ else{
     margin-top: -8px;
   }
   .portlet-content {
-
+font-family: 'Just Another Hand', cursive;
     padding: 0.2em;
     text-align: center;
   }
@@ -128,7 +130,7 @@ for($i=0;$i<count($json);$i++){
     echo '<div class="column">';
 ?>
   <div class="portlet">
-    <div class="portlet-header"><img src="<?php echo $json[$i]['url_thumb']; ?>" /></div>
+    <div class="portlet-header"><img src="<?php echo $json[$i]['thumb']; ?>" /></div>
     <div class="portlet-content"><?php echo $json[$i]['caption']; ?></div>
   </div>
  <?php
