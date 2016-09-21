@@ -61,7 +61,7 @@ else{
     font-family: 'Just Another Hand', cursive;
   }
   .column {
-    width: 240px;
+    width: 235px;
     float: left;
     padding-bottom: 240px;
   }
