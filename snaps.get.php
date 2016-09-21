@@ -146,7 +146,9 @@ for($i=0;$i<count($json);$i++){
 ?>
   <div class="portlet">
     <div class="portlet-header"><img src="<?php echo $json[$i]['thumb']; ?>" /></div>
-    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?><span class='ui-icon ui-icon-heart heart-toggle'></div> <span id="votes<?php echo $json[$i]['id']?>"><?php echo $json[$i]['votes'] ?></span>
+    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content">
+      <?php echo $json[$i]['caption']; ?>
+      <span class='ui-icon ui-icon-heart heart-toggle'></span> <span id="votes<?php echo $json[$i]['id']?>"><?php echo $json[$i]['votes'] ?></div>
   </div>
  <?php
   if($i%3==2 || $i==(count($json)-1))
