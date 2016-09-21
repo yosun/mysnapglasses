@@ -5,13 +5,13 @@ if(!isset($username))die('username needed');
 
 require_once('_c0nn.php'); $username=quoty($username);
 
-$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes ASC'; //echo $query;
+$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes DESC'; //echo $query;
 
 $result = @mysql_query($query);
 
 while($row=mysql_fetch_assoc($result)){
 
-$json[]=array('id'=>$row['id'] , 'url'=> $row['url'],'thumb'=>$row['url_thumb'],'caption'=>$row['caption']);
+$json[]=array('id'=>$row['id'] , 'url'=> $row['url'],'thumb'=>$row['url_thumb'],'caption'=>$row['caption'],'votes'=>$row['votes']);
 
 }
 if(isset($_REQUEST['json']))
