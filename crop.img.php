@@ -21,7 +21,7 @@ $thumbFilePath = $thumbFile;
   imagecopyresampled( $new , $src , 0 , 0 , ( $newW-$thumbSize )/2 , ( $newH-$thumbSize )/2 , $thumbSize , $thumbSize , $oldW , $oldH );
     $src = imagepng( $new , $thumbFilePath );
   imagedestroy( $new );
-  imagedestroy( $src );
+//  imagedestroy( $src );
 
   return $thumbFilePath;
 }
