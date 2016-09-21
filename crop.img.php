@@ -29,16 +29,9 @@ $thumbFilePath = $thumbFile; $destination_file = $thumbFilePath;
   $new_width = round($new_width);
   $new_height = round($new_height);
 
-  // load the image
-  if(substr_count(strtolower($original_file), ".jpg") or substr_count(strtolower($original_file), ".jpeg")){
-    $original_image = imagecreatefromjpeg($original_file);
-  }
-  if(substr_count(strtolower($original_file), ".gif")){
-    $original_image = imagecreatefromgif($original_file);
-  }
-  if(substr_count(strtolower($original_file), ".png")){
+
     $original_image = imagecreatefrompng($original_file);
-  }
+
 
   $smaller_image = imagecreatetruecolor($new_width, $new_height);
   $square_image = imagecreatetruecolor($square_size, $square_size);
