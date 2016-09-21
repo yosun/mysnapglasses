@@ -115,9 +115,9 @@ font-family: 'Just Another Hand', cursive;
 
       if(icon.find(".ui-icon-red")){
         $.post( "http://php-mysnapglasses.0ec9.hackathon.openshiftapps.com/vote.add.php?id="+icon.closest("div").prop("id"), function( data ) {
-            var id = icon.closest("div").prop("id");
-            var val = $("#votes"+id).val();
-             $("#votes"+id).val(val+1);
+          var id = icon.closest("div").prop("id");
+        var val = parseInt($("#votes"+id).text()) + 1;
+         $("#votes"+id).text(val);
       });
 
       icon.toggleClass( "ui-icon-red ui-icon-heart" );
