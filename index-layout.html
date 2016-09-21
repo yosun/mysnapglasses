@@ -11,6 +11,33 @@
   body {
     min-width: 750px;
     background-color: black;
+
+    background-image: url(http://reasonerlandscaping.com/wp-content/uploads/2013/02/Wood-Background.jpg);
+
+   /* Background image is centered vertically and horizontally at all times */
+   background-position: center center;
+
+   /* Background image doesn't tile */
+   background-repeat: no-repeat;
+
+   /* Background image is fixed in the viewport so that it doesn't move when
+      the content's height is greater than the image's height */
+   background-attachment: fixed;
+
+   /* This is what makes the background image rescale based
+      on the container's size */
+   background-size: cover;
+
+   padding:20px;
+       font-family: 'Just Another Hand', cursive;
+  }
+  .bannertop{
+    font-size: 48px;
+    color: white;
+    padding:50px;
+    background-color:black;
+    margin:-20px;
+    margin-bottom:20px;
   }
   .column {
     width: 240px;
@@ -32,7 +59,7 @@
     margin-top: -8px;
   }
   .portlet-content {
-    font-family: 'Just Another Hand', cursive;
+
     padding: 0.2em;
     text-align: center;
   }
@@ -73,6 +100,8 @@
 </head>
 <body>
 
+<div class="bannertop">My SnapGlass.es SnapBox</div>
+
 <div class="column">
 
   <div class="portlet">
@@ -102,7 +131,7 @@
 
   <div class="portlet">
       <div class="portlet-header"><img src="https://s3-us-west-1.amazonaws.com/giftgami/thumb_157e272aaf1129.png" /></div>
-    <div class="portlet-content">Warby Parker</div>
+    <div class="portlet-content">#WarbyParker #Stockton - Sea Green Crystal</div>
   </div>
 
 
