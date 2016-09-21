@@ -134,7 +134,7 @@ for($i=0;$i<count($json);$i++){
     <div class="portlet-content"><?php echo $json[$i]['caption']; ?></div>
   </div>
  <?php
-  if($i%3==0 || $i==(count($json)-1))
+  if($i%3==2 || $i==(count($json)-1))
     echo '</div>';
 } ?>
 
