@@ -1,4 +1,4 @@
-<?php
+<?php error_reporting(E_ALL ^ E_DEPRECATED);
 $username = $_REQUEST['username'];
 
 require_once('_c0nn.php'); $username=quoty($username);
