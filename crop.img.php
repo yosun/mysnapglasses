@@ -1,5 +1,5 @@
 <?php
- function makeThumb( $filepath, $thumbSize=350 ){
+ function makeThumb( $filepath, $thumbSize=300 ){
   // echo 'mt'.$filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
@@ -18,7 +18,7 @@ $thumbFilePath = $thumbFile;
  /* Create the New Image */
   $new = imagecreatetruecolor( $thumbSize , $thumbSize );
  /* Transcribe the Source Image into the New (Square) Image */
-  imagecopyresampled( $new , $src , 0 , 0 , ( $newW-$thumbSize )/2 , ( $newH-$thumbSize )/2 , $thumbSize , $thumbSize , $oldW , $oldH );
+  imagecopyresampled( $new , $src , 0 , 0 , 0, $oldH / 2 - $thumbSize /2 , $thumbSize , $thumbSize , $oldW , $oldH );
     $src = imagepng( $new , $thumbFilePath );
   imagedestroy( $new );
 //  imagedestroy( $src );

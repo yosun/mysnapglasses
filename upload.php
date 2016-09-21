@@ -26,7 +26,7 @@ if(isset($submit) && $submit == 1){
         //mysql_select_db('snapglasses');
         require_once('/opt/app-root/src/fn_mysql.php');
         $query = mins('snaps',array('url','username','url_thumb'),array($fullurl,$username,$urlthumb));
-        mysql_query($query);
+        @mysql_query($query);
 
 }else {  ?>
         <form enctype="multipart/form-data" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
