@@ -1,6 +1,6 @@
 <?php
  function makeThumb( $filepath, $thumbSize=350 ){
-   
+   echo 'mt'.filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
   $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath).'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
