@@ -1,0 +1,13 @@
+<?php
+
+$u='userNX3';
+$p='iEOXLimq7i5axDUu';
+$db='snapglasses';
+
+//
+
+$conn = mysql_connect('localhost',$u,$p);
+
+mysql_select_db($db,$conn);
+
+require_once('fn_mysql.php');
