@@ -14,5 +14,10 @@ while($row=mysql_fetch_assoc($result)){
 $json[]=array('id'=>$row['id'] , 'url'=> $row['url']);
 
 }
+if($_REQUEST['json']==1)
+  echo json_encode($json);
+else{
+// outputs a webpage
 
-echo json_encode($json);
+
+}

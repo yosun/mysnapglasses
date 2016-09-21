@@ -5,23 +5,10 @@
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
   $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath);//.'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
 $thumbFilePath = $thumbFile;
- /* Create the Source Image */
-  $src = imagecreatefrompng( $srcFile );
- /* Determine the Image Dimensions */
-  $oldW = imagesx( $src );
-  $oldH = imagesy( $src );
- /* Calculate the New Image Dimensions */
 
-    $newW = $thumbSize;
-    $newH = $oldH * ( $thumbSize / $newW );
-
- /* Create the New Image */
-  $new = imagecreatetruecolor( $thumbSize , $thumbSize );
- /* Transcribe the Source Image into the New (Square) Image */
-  imagecopy( $new , $src , 0, $oldH / 2 - $thumbSize /2 , 0,0, $oldW,$oldH  );
-    $src = imagepng( $new , $thumbFilePath );
-  imagedestroy( $new );
-//  imagedestroy( $src );
+$imagick = new \Imagick(realpath($filepath));
+    $imagick->cropImage($thumbSize,$thumbSize, 0,0);
+$imagick->writeImage($thumbFilePath);
 
   return $thumbFilePath;
 }
