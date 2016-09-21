@@ -122,7 +122,7 @@ font-family: 'Just Another Hand', cursive;
 </head>
 <body>
 
-<div class="bannertop">My SnapGlass.es SnapBox</div>
+<div class="bannertop">My SnapGlass.es SnapBox <?php echo count($json); ?></div>
 
 <?php
 for($i=0;$i<count($json);$i++){
