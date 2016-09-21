@@ -18,7 +18,7 @@ $thumbFilePath = $thumbFile;
  /* Create the New Image */
   $new = imagecreatetruecolor( $thumbSize , $thumbSize );
  /* Transcribe the Source Image into the New (Square) Image */
-  imagecopy( $new , $src , 0, $oldH / 2 - $thumbSize /2 , $thumbSize , $thumbSize , $oldW , $oldH );
+  imagecopy( $new , $src , 0, $oldH / 2 - $thumbSize /2 , 0,0,$thumbSize , $thumbSize  );
     $src = imagepng( $new , $thumbFilePath );
   imagedestroy( $new );
 //  imagedestroy( $src );
