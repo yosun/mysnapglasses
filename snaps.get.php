@@ -1,6 +1,8 @@
 <?php error_reporting(E_ALL ^ E_DEPRECATED);
 $username = $_REQUEST['username'];
 
+if(!isset($username))die('username needed');
+
 require_once('_c0nn.php'); $username=quoty($username);
 
 $query = 'SELECT * FROM snaps WHERE username=\''.$username.'\''; //echo $query;
