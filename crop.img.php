@@ -6,7 +6,7 @@
   $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath);//.'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
 $thumbFilePath = $thumbFile;
 
-$imagick = new \Imagick(realpath($filepath));
+$imagick = new imagick(realpath($filepath));
     $imagick->cropThumbnailImage($thumbSize,$thumbSize);//, 0,0);
 $imagick->writeImage($thumbFilePath);
 
