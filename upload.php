@@ -9,14 +9,22 @@ if(isset($submit) && $submit == 1){
     $filenamewithextension = uniqid(true) . '.png';//$_FILES['gif']['name'];
 //echo $filenamewithextension;
     $fullurl = 'https://s3-us-west-1.amazonaws.com/giftgami/'.$filenamewithextension;
+    $thumbname = 'thumb_'.$filenamewithextension;
+    $urlthumb = 'https://s3-us-west-1.amazonaws.com/giftgami/'.$thumbname;
     echo $fullurl;//. ' =fullurl | '. sys_get_temp_dir(). ' | temppath= '.$temppath;
         require_once('s3.upload.php');
 
         UploadS3('giftgami',$filenamewithextension,$temppath);
+
+        require_once('crop.img.php');
+        makeThumb('');
+
+        UploadS3('giftgami',$thumbname,$temppaththumb);
+
         require_once('/opt/app-root/src/_c0nn.php');
         //mysql_select_db('snapglasses');
         require_once('/opt/app-root/src/fn_mysql.php');
-        $query = mins('snaps',array('url','username'),array($fullurl,$username));
+        $query = mins('snaps',array('url','username','url_thumb'),array($fullurl,$username,$urlthumb));
         mysql_query($query);
 
 }else {  ?>
