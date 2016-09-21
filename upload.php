@@ -26,6 +26,6 @@ if(isset($submit) && $submit == 1){
             <input type = "hidden" name = "pseudo_device_udid" value = "123456123456123456123456123456123456" />
             <input type = "hidden" name = "submit" value ="1" />
             <input name="gif" type="file"><input type="submit" value="submit">
-        </form>
+        </form> wtf
 
 <?php } ?>
