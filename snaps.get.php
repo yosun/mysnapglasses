@@ -5,7 +5,7 @@ if(!isset($username))die('username needed');
 
 require_once('_c0nn.php'); $username=quoty($username);
 
-$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY id DESC'; //echo $query;
+$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes DESC'; //echo $query;
 
 $result = @mysql_query($query);
 
@@ -106,17 +106,25 @@ font-family: 'Just Another Hand', cursive;
       placeholder: "portlet-placeholder ui-corner-all"
     });
 
-    $( ".portlet" )
-      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" );
-    //  .find( ".portlet-header" );
-        //.addClass( "ui-widget-header ui-corner-all" );
-        //.prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+   $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix" );
+    /*  .find( ".portlet-content" )
+        .append( "<span class='ui-icon ui-icon-heart portlet-toggle'></span>");*/
 
-  /*  $( ".portlet-toggle" ).on( "click", function() {
+    $( ".heart-toggle" ).on( "click", function() {
       var icon = $( this );
-      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
-      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-    });*/
+
+      if(icon.find(".ui-icon-red")){
+        $.post( "http://php-mysnapglasses.0ec9.hackathon.openshiftapps.com/vote.add.php?id="+icon.closest("div").prop("id"), function( data ) {
+
+
+      });
+
+      icon.toggleClass( "ui-icon-red ui-icon-heart" );
+
+
+      }
+    });
   } );
   </script>
 </head>
@@ -131,7 +139,7 @@ for($i=0;$i<count($json);$i++){
 ?>
   <div class="portlet">
     <div class="portlet-header"><img src="<?php echo $json[$i]['thumb']; ?>" /></div>
-    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?></div>
+    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?><span class='ui-icon ui-icon-heart heart-toggle'></div>
   </div>
  <?php
   if($i%3==2 || $i==(count($json)-1))
