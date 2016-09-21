@@ -5,7 +5,7 @@
 $submit = $_REQUEST['submit']; $devicetype = $_REQUEST['devicetype']; $pseudo_device_udid = $_REQUEST['pseudo_device_udid'];
 $username = $_REQUEST['username'];
 if(isset($submit) && $submit == 1){
-      $temppath = $_FILES['png']['tmp_name'];
+      $temppath = $_FILES['png']['tmp_name']; $temppath2=$temppath;
     $filenamewithextension = uniqid(true) . '.png';//$_FILES['gif']['name'];
 //echo $filenamewithextension;
     $fullurl = 'https://s3-us-west-1.amazonaws.com/giftgami/'.$filenamewithextension;
@@ -17,7 +17,8 @@ if(isset($submit) && $submit == 1){
         UploadS3('giftgami',$filenamewithextension,$temppath);
 
         require_once('crop.img.php');
-        makeThumb('');
+        echo $temppath2;
+        makeThumb($temppath2);
 
         UploadS3('giftgami',$thumbname,$temppaththumb);
 
