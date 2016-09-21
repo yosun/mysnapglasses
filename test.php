@@ -1,1 +1,1 @@
-<?php echo 'sanity testing??';
+<?php echo $_REQUEST['q'] . ' sanity testing??';
