@@ -3,9 +3,9 @@ $username = $_REQUEST['username'];
 
 require_once('_c0nn.php'); $username=quoty($username);
 
-$query = 'SELECT * FROM snaps WHERE username='.$username;
+$query = 'SELECT * FROM snaps WHERE username=`'.$username.'`'; echo $query;
 
-$result = mysql_query($query);
+$result = @mysql_query($query);
 
 while($row=mysql_fetch_assoc($result)){
 
