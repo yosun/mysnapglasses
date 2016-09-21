@@ -1,1 +1,1 @@
-<?php 
+<?php // deprecated to upload.php
