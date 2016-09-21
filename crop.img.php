@@ -3,7 +3,7 @@
   // echo 'mt'.$filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
-  $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath);//.'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
+  $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath).'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
 $thumbFilePath = $thumbFile; $destination_file = $thumbFilePath;
 
  $original_file=$filepath; $new_height=$thumbSize; $new_width=$new_height; $square_size = $thumbSize;
