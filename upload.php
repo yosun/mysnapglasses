@@ -9,7 +9,7 @@ if(isset($submit) && $submit == 1){
     $filenamewithextension = uniqid(true) . '.png';//$_FILES['gif']['name'];
 //echo $filenamewithextension;
     $fullurl = 'https://s3-us-west-1.amazonaws.com/giftgami/'.$filenamewithextension;
-    echo $fullurl. ' =fullurl | '. sys_get_temp_dir(). ' | temppath= '.$temppath;
+    echo $fullurl;//. ' =fullurl | '. sys_get_temp_dir(). ' | temppath= '.$temppath;
         require_once('s3.upload.php');
 
         UploadS3('giftgami',$filenamewithextension,$temppath);
@@ -26,6 +26,6 @@ if(isset($submit) && $submit == 1){
             <input type = "hidden" name = "pseudo_device_udid" value = "123456123456123456123456123456123456" />
             <input type = "hidden" name = "submit" value ="1" />
             <input name="png" type="file"><input type="submit" value="submit">
-        </form> wtf?!
+        </form>
 
 <?php } ?>
