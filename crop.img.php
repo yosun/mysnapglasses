@@ -1,11 +1,10 @@
 <?php
  function makeThumb( $filepath, $thumbSize=350 ){
-  global $max_width, $max_height;
+   
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
   $thumbFile = dirname($filepath) .'/thumb_'.basename($filepath).'.png';// $filepath.'/thumb/'.$filename;// 'blocks/img/gallery/thumbs/'.$filename;
- /* Determine the File Type */
-  $type = substr( $filename , strrpos( $filename , '.' )+1 );
+
  /* Create the Source Image */
   $src = imagecreatefrompng( $srcFile );
  /* Determine the Image Dimensions */
