@@ -5,7 +5,7 @@ if(!isset($username))die('username needed');
 
 require_once('_c0nn.php'); $username=quoty($username);
 
-$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes DESC'; //echo $query;
+$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes ASC'; //echo $query;
 
 $result = @mysql_query($query);
 
