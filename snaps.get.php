@@ -11,7 +11,7 @@ $result = @mysql_query($query);
 
 while($row=mysql_fetch_assoc($result)){
 
-$json[]=array('id'=>$row['id'] , 'url'=> $row['url']);
+$json[]=array('id'=>$row['id'] , 'url'=> $row['url'],'thumb'=>$row['url_thumb']);
 
 }
 if(isset($_REQUEST['json']))

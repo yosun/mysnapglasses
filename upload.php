@@ -3,7 +3,7 @@
 @ini_set( 'max_execution_time', '500' );
 
 $submit = $_REQUEST['submit']; $devicetype = $_REQUEST['devicetype']; $pseudo_device_udid = $_REQUEST['pseudo_device_udid'];
-$username = $_REQUEST['username'];
+$username = $_REQUEST['username'];$caption=$_REQUEST['caption'];
 if(isset($submit) && $submit == 1){
       $temppath = $_FILES['png']['tmp_name']; $temppath2=$temppath;
     $filenamewithextension = uniqid(true) . '.png';//$_FILES['gif']['name'];
@@ -25,7 +25,7 @@ if(isset($submit) && $submit == 1){
         require_once('/opt/app-root/src/_c0nn.php');
         //mysql_select_db('snapglasses');
         require_once('/opt/app-root/src/fn_mysql.php');
-        $query = mins('snaps',array('url','username','url_thumb'),array($fullurl,$username,$urlthumb));
+        $query = mins('snaps',array('url','username','url_thumb','caption'),array($fullurl,$username,$urlthumb,$caption));
         @mysql_query($query);
 
 }else {  ?>
