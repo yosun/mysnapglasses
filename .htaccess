@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^about/ about.php [QSA,L]
+RewriteRule ^about about.php [QSA,L]
