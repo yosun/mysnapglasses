@@ -1,5 +1,5 @@
 <?php
- function makeThumb( $filepath, $thumbSize=250 ){
+ function makeThumb( $filepath, $thumbSize=300 ){
   // echo 'mt'.$filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
