@@ -5,7 +5,7 @@ if(!isset($username))die('username needed');
 
 require_once('_c0nn.php'); $username=quoty($username);
 
-$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes DESC'; //echo $query;
+$query = 'SELECT * FROM snaps WHERE username=\''.$username.'\' ORDER BY votes DESC, id DESC'; //echo $query;
 
 $result = @mysql_query($query);
 
@@ -25,7 +25,6 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SnapGlass.es SnapBox</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
   <style>
   body {
@@ -116,8 +115,9 @@ font-family: 'Just Another Hand', cursive;
 
       if(icon.find(".ui-icon-red")){
         $.post( "http://php-mysnapglasses.0ec9.hackathon.openshiftapps.com/vote.add.php?id="+icon.closest("div").prop("id"), function( data ) {
-
-
+            var id = icon.closest("div").prop("id");
+            var val = $("#votes"+id).val();
+             $("#votes"+id).val(val+1);
       });
 
       icon.toggleClass( "ui-icon-red ui-icon-heart" );
@@ -139,7 +139,7 @@ for($i=0;$i<count($json);$i++){
 ?>
   <div class="portlet">
     <div class="portlet-header"><img src="<?php echo $json[$i]['thumb']; ?>" /></div>
-    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?><span class='ui-icon ui-icon-heart heart-toggle'></div>
+    <div id="<?php echo $json[$i]['id'] ?>" class="portlet-content"><?php echo $json[$i]['caption']; ?><span class='ui-icon ui-icon-heart heart-toggle'></div> <span id="votes<?php echo $json[$i]['id']?>"><?php echo $json[$i]['votes'] ?></span>
   </div>
  <?php
   if($i%3==2 || $i==(count($json)-1))

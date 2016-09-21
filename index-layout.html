@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Sortable - Portlets</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
   <style>
   body {
@@ -79,6 +78,7 @@
   .ui-icon-red {
   background-image: url("http://download.jqueryui.com/themeroller/images/ui-icons_ff0000_256x240.png");
   }
+  .ui-icon-heart { background-position: -208px -112px; }
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -100,13 +100,15 @@
       var icon = $( this );
 
       if(icon.find(".ui-icon-red")){
+        var id = icon.closest("div").prop("id");
+      var val = parseInt($("#votes"+id).text()) + 1;
+       $("#votes"+id).text(val);
         $.post( "http://php-mysnapglasses.0ec9.hackathon.openshiftapps.com/vote.add.php?id="+icon.closest("div").prop("id"), function( data ) {
-        //$( ".result" ).html( data );
 
 
       });
-      //icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
-        icon.toggleClass( "ui-icon-red ui-icon-heart" );
+
+      icon.toggleClass( "ui-icon-red ui-icon-heart" );
 
 
       }
@@ -147,7 +149,7 @@
 
   <div class="portlet">
       <div class="portlet-header"><img src="https://s3-us-west-1.amazonaws.com/giftgami/thumb_157e272aaf1129.png" /></div>
-    <div class="portlet-content" id="2">   #WarbyParker #Stockton - Sea Green Crystal <span class='ui-icon ui-icon-heart heart-toggle'></span></div>
+    <div class="portlet-content" id="2">   #WarbyParker #Stockton - Sea Green Crystal <span class='ui-icon ui-icon-heart heart-toggle'></span> <span id="votes2">2</span></div>
   </div>
 
 
