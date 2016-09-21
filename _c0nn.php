@@ -6,7 +6,7 @@ $db='snapglasses';
 
 //
 
-$conn = mysql_connect('localhost',$u,$p);
+$conn = mysql_connect( getenv("MYSQL_SERVICE_HOST"), getenv("MYSQL_USER"),getenv("MYSQL_PASSWORD"));
 
 mysql_select_db($db,$conn);
 
