@@ -1,5 +1,5 @@
 <?php
- function makeThumb( $filepath, $thumbSize=300 ){
+ function makeThumb( $filepath, $thumbSize=250 ){
   // echo 'mt'.$filepath;
  /* Set Filenames */
   $srcFile = $filepath;//.'/'.$filename;//'blocks/img/gallery/'.$filename;
@@ -7,7 +7,7 @@
 $thumbFilePath = $thumbFile;
 
 $imagick = new \Imagick(realpath($filepath));
-    $imagick->cropImage($thumbSize,$thumbSize, 0,0);
+    $imagick->cropThumbnailImage($thumbSize,$thumbSize);//, 0,0);
 $imagick->writeImage($thumbFilePath);
 
   return $thumbFilePath;
